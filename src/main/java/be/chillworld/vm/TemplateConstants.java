@@ -6,6 +6,6 @@ package be.chillworld.vm;
  */
 public interface TemplateConstants {
 
-    String MOBILE = "mobile";
-    String DESKTOP = "desktop";
+	String MOBILE = "mobile";
+	String DESKTOP = "desktop";
 }

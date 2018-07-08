@@ -12,47 +12,46 @@ import org.zkoss.zk.ui.Executions;
  */
 public class IndexVM implements TemplateConstants {
 
-    private String url;
-    private static final String URL_PREFIX = "~./zul/webpages/templates/";
-    private String template = null;
+	private String url;
+	private static final String URL_PREFIX = "~./zul/webpages/templates/";
+	private String template = null;
 
-    @Init
-    public void init(@QueryParam("page") String queryParam) {
-        url = (String) Executions.getCurrent().getAttribute("page") + ".zul";
-    }
+	@Init
+	public void init(@QueryParam("page") String queryParam) {
+		url = (String) Executions.getCurrent().getAttribute("page") + ".zul";
+	}
 
-    @MatchMedia("all and (max-width: 500px)")
-    public void handleMax500() {
-        switchTemplate(MOBILE);
-    }
+	@MatchMedia("all and (max-width: 500px)")
+	public void handleMax500() {
+		switchTemplate(MOBILE);
+	}
 
-    @MatchMedia("all and (min-width: 501px)")
-    public void handleMin500() {
-        switchTemplate(DESKTOP);
-    }
+	@MatchMedia("all and (min-width: 501px)")
+	public void handleMin500() {
+		switchTemplate(DESKTOP);
+	}
 
-    public void switchTemplate(String newTemplate) {
-        if (template == null || !newTemplate.equals(template)) {
-            this.template = newTemplate;
-            BindUtils.postNotifyChange(null, null, this, "template");
-            BindUtils.postNotifyChange(null, null, this, "mobile");
-        }
-    }
+	public void switchTemplate(String newTemplate) {
+		if (template == null || !newTemplate.equals(template)) {
+			this.template = newTemplate;
+			BindUtils.postNotifyChange(null, null, this, "template");
+			BindUtils.postNotifyChange(null, null, this, "mobile");
+		}
+	}
 
-    public String getTemplate() {
-        return template;
-    }
+	public String getTemplate() {
+		return template;
+	}
 
-    public boolean isMobile() {
-        return MOBILE.equals(template);
-    }
+	public boolean isMobile() {
+		return MOBILE.equals(template);
+	}
 
-    public String getUrl() {
-        if (url == null) {
-            return null;
-        }
-        return URL_PREFIX + url;
-
-    }
+	public String getUrl() {
+		if (url == null) {
+			return null;
+		}
+		return URL_PREFIX + url;
+	}
 
 }

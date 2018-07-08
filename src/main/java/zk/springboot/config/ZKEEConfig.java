@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-import org.zkoss.zkmax.ui.comet.CometAsyncServlet;
+//import org.zkoss.zkmax.ui.comet.CometAsyncServlet; // Only in EE
 
 @Import(ZKCEConfig.class)
 public class ZKEEConfig {
@@ -22,24 +22,27 @@ public class ZKEEConfig {
 //        };
 //    }
 
-    @Bean
+	//@Trifon - only for EE
+/*    @Bean
     public ServletRegistrationBean cometAsyncServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean(new CometAsyncServlet(), "/zkcomet/*");
         reg.setAsyncSupported(true);
         return reg;
     }
-    
-    @Bean
-    public FilterRegistrationBean pageFilterRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(pageFilter());
-        registration.addUrlPatterns("/*");
-        registration.setName("pageFilter");
-        registration.setOrder(99);
-        return registration;
-    }
+*/
 
-    public Filter pageFilter() {
-        return new PageDispatcherFilter();
-    }
+	// TODO @Trifon - this bean is already defined in ZKCEConfig!
+	@Bean
+	public FilterRegistrationBean pageFilterRegistration() {
+		FilterRegistrationBean registration = new FilterRegistrationBean();
+		registration.setFilter(pageFilter());
+		registration.addUrlPatterns("/*");
+		registration.setName("pageFilter");
+		registration.setOrder(99);
+		return registration;
+	}
+
+	public Filter pageFilter() {
+		return new PageDispatcherFilter();
+	}
 }

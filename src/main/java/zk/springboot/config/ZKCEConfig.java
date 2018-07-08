@@ -10,9 +10,13 @@ import org.zkoss.zk.au.http.DHtmlUpdateServlet;
 import org.zkoss.zk.ui.http.HttpSessionListener;
 import org.zkoss.zk.ui.http.RichletFilter;
 
+import be.chillworld.filter.PageDispatcherFilter;
+
+import javax.servlet.Filter;
 import javax.servlet.http.HttpServletRequest;
 
 public class ZKCEConfig {
+
 	private static final String UPDATE_URI = "/zkau"; //servlet mapping for ZK's update servlet
 	private static final String RICHLET_URI = "/richlet";
 	private static final String ZUL_FORWARD_URI = UPDATE_URI + ClassWebResource.PATH_PREFIX  + "/zul";
@@ -52,5 +56,19 @@ public class ZKCEConfig {
 	@Bean
 	public HttpSessionListener httpSessionListener() {
 		return new HttpSessionListener();
+	}
+
+	@Bean
+	public FilterRegistrationBean pageFilterRegistration() {
+		FilterRegistrationBean registration = new FilterRegistrationBean();
+		registration.setFilter(pageFilter());
+		registration.addUrlPatterns("/*");
+		registration.setName("pageFilter");
+		registration.setOrder(99);
+		return registration;
+	}
+
+	public Filter pageFilter() {
+		return new PageDispatcherFilter();
 	}
 }

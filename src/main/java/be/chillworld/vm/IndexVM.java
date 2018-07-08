@@ -46,6 +46,9 @@ public class IndexVM implements TemplateConstants {
 	public boolean isMobile() {
 		return MOBILE.equals(template);
 	}
+	public boolean isDesktop() {
+		return DESKTOP.equals(template);
+	}
 
 	public String getUrl() {
 		if (url == null) {

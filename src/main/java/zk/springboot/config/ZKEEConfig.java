@@ -3,8 +3,8 @@ package zk.springboot.config;
 import be.chillworld.filter.PageDispatcherFilter;
 import javax.servlet.Filter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletContextInitializer;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
+//import org.springframework.boot.web.servlet.ServletContextInitializer; // Only in EE
+//import org.springframework.boot.web.servlet.ServletRegistrationBean;   // Only in EE
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 //import org.zkoss.zkmax.ui.comet.CometAsyncServlet; // Only in EE

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class PageDispatcherFilter implements Filter {
 
-	private static final String INDEX_PAGE = "/index.zul";
+	private static final String INDEX_PAGE = "/index2.zul";
 	private static final String PAGE = "page";
 
 	@Override

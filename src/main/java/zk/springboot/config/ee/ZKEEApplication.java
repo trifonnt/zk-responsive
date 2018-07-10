@@ -1,4 +1,4 @@
-package zk.springboot.config;
+package zk.springboot.config.ee;
 
 import org.springframework.context.annotation.Import;
 

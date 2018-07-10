@@ -1,6 +1,8 @@
-package zk.springboot.config;
+package zk.springboot.config.ee;
 
 import be.chillworld.filter.PageDispatcherFilter;
+import zk.springboot.config.ZKCEConfig;
+
 import javax.servlet.Filter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 //import org.springframework.boot.web.servlet.ServletContextInitializer; // Only in EE

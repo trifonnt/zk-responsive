@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class PageDispatcherFilter implements Filter {
 
-	private static final String INDEX_PAGE = "/index2.zul";
+	private static final String INDEX_PAGE = "/index.zul";
 	private static final String PAGE = "page";
 
 	@Override
@@ -35,6 +35,7 @@ public class PageDispatcherFilter implements Filter {
 			|| path.startsWith("/index")
 			|| path.contains(".zul")
 			|| path.contains("html")
+			|| path.contains("favicon.ico")
 			|| path.contains("j_spring_security_check")
 			) 
 		{

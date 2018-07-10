@@ -4,7 +4,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul  http://www.zkoss.org/2005/zul/zul.xsd">
 
-    <div id="root" height="100%" viewModel="@id('indexVM') @init('be.chillworld.vm.IndexVM')">
+    <div id="root" height="100%" apply="org.zkoss.bind.BindComposer"
+    	viewModel="@id('indexVM') @init('be.chillworld.vm.IndexVM')">
         <style>
             .z-center-body, .z-west-body, .z-window, .z-window-content {
                 padding:0px;
@@ -35,7 +36,11 @@
             </west>
             <center id="center" border="normal" sclass="T_center">
                 <div>
-                <apply templateURI="@load(indexVM.url)" height="100%" style="overflow:auto" />
+                	<!--button id="clickMeButton" label="Click Me!" onClick="@command(indexVM.handleButtonClicked())"/-->
+                	<button id="clickMeButton" label="Click Me!" onClick="@command('handleButtonClicked')"/>
+	                <label id="label1" value="@load(indexVM.trifonProperty)"/>
+	                <label id="label2" value="@load(indexVM.trifonProperty)"/>
+	                <apply templateURI="@load(indexVM.url)" height="100%" style="overflow:auto" />
                 </div>
             </center>
         </borderlayout>

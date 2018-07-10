@@ -15,7 +15,7 @@
 
 	<properties>
 		<java.version>1.7</java.version>
-		<zk.version>8.5.0</zk.version> <!-- 8.5.0-Eval -->
+		<zk.version>8.5.0-Eval</zk.version> <!-- 8.5.0-Eval -->
 		<commons-io.version>2.6</commons-io.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -27,11 +27,11 @@
 			<name>ZK CE Repository</name>
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
-		<!--repository>
+		<repository>
 			<id>ZK EVAL</id>
 			<name>ZK Evaluation Repository</name>
 			<url>http://mavensync.zkoss.org/eval</url>
-		</repository-->
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -42,8 +42,8 @@
 
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkbind</artifactId>  <!--ZK CE-->
-			<!--artifactId>zkex</artifactId-->   <!--ZK PE-->
+			<!--artifactId>zkbind</artifactId-->  <!--ZK CE-->
+			<artifactId>zkex</artifactId>   <!--ZK PE-->
 			<!--artifactId>zkmax</artifactId-->  <!--ZK EE-->
 			<version>${zk.version}</version>
 			<exclusions>
@@ -54,11 +54,11 @@
 			</exclusions>
 		</dependency>
 		<!--ZK Eval and EE packages only-->
-		<!--dependency>
+		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zuti</artifactId>
 			<version>${zk.version}</version>
-		</dependency-->
+		</dependency>
 		<!--dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zuti</artifactId>
